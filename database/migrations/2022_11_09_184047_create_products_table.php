@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('cover')->nullable();
+            $table->string('coverUrl')->nullable();
             $table->decimal('price')->default('0.00');
             $table->text('description')->nullable();
             $table->integer('stock')->default(0);

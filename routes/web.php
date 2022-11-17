@@ -22,4 +22,12 @@ Route::get('/product/{product:slug}', [ProductController::class, 'index'])->name
 
 // Admin
 Route::get('/admin/products', [AdminProductController::class, 'index'])->name('admin.products');
-Route::get('/admin/products/edit', [AdminProductController::class, 'edit'])->name('admin.products.edit');
+
+Route::get('/admin/products/create', [AdminProductController::class, 'create'])->name('admin.products.create');
+Route::post('/admin/products/', [AdminProductController::class, 'store'])->name('admin.products.store');
+
+Route::get('/admin/products/{product}/edit', [AdminProductController::class, 'edit'])->name('admin.products.edit');
+Route::put('/admin/products/{product}', [AdminProductController::class, 'update'])->name('admin.products.update');
+
+Route::get('/admin/products/{product}/delete', [AdminProductController::class, 'delete'])->name('admin.products.delete');
+Route::get('/admin/products/{product}/delete-image', [AdminProductController::class, 'deleteImage'])->name('admin.products.deleteImage');
